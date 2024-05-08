@@ -16,8 +16,6 @@ public class HolaMundo {
 		System.out.println("alo alo");
 		System.out.println("");
 		System.out.println("Clase 5 TERMINADA");
-		
-		
 		/*
 		 * print: No realiza el salto de linea
 		 * println: realiza salto de linea
