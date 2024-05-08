@@ -1,0 +1,4 @@
+INDEX VERSION 1.134+C:\Users\HP\eclipse-workspace\Capacitacion_java\Hola_mundo\.metadata\.plugins\org.eclipse.jdt.core
+759924884.index
+3251249088.index
+1865797976.index
