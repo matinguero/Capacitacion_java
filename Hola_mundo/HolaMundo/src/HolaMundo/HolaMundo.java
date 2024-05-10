@@ -1,5 +1,7 @@
 package HolaMundo;
 
+import javax.swing.*;
+
 public class HolaMundo {
 
 	public static void main (String[] args)
@@ -17,6 +19,16 @@ public class HolaMundo {
 		System.out.println("");
 		System.out.println("Clase 5 TERMINADA");
 		
+		String nombre = JOptionPane.showInputDialog(null, "Ingrese nombre: ");
+		
+		
+		System.out.println("Nombre = " + nombre);
+		
+		int edad = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese edad: "));
+		
+		JOptionPane.showMessageDialog(null, nombre);
+		JOptionPane.showMessageDialog(null, edad);
+		
 		/*
 		 * 13:52 clase 6
 		 * */
@@ -26,6 +38,7 @@ public class HolaMundo {
 		 * 
 		 *  */
 		
+		System.out.println("FIN PROGRAMA");
 	}
 	
 }
