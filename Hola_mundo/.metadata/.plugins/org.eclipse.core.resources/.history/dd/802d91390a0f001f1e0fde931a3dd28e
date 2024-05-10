@@ -1,0 +1,20 @@
+package temasDelCurso;
+
+public class OperadoresAritmeticos {
+
+	public static void main(String[] args) {
+		//suma
+		
+		int i = 4;
+		int j = 6;
+		int suma;
+		//TAMBIEN SE PUEDE DECLARAR ASI
+		// int i, j, suma;
+		suma = i + j;
+		
+		System.out.println(suma);
+		System.out.println("La suma es " + (i+j));
+		
+	}
+
+}
