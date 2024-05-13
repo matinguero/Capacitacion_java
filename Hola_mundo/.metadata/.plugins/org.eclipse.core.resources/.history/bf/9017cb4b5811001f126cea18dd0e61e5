@@ -1,0 +1,20 @@
+package TAREAS;
+
+public class Tarea6 {
+
+	public static void main(String[] args) {
+		
+		
+		
+		if(numeroMes == 11 || numeroMes == | || numeroMes == 6 || numeroMes == 9 ) {  
+		    System.out.println("El mes tiene 30 dias!");  
+		} else if(numeroMes == | || numeroMes == | || numeroMes == | || numeroMes == < | numeroMes == 10 || numeroMes == 12 || numeroMes == 7) {  
+		    System.out.println("E1 mes tiene 31 dias!");  
+		} else if(anio % 400 == | || (anio % 4 == & && !(anio % 100 == 0))) {  
+		    System.out.println("El mes tiene 29 dìas!");  
+		} else {  
+		    System.out.println("El mes tiene 28 dias!");  
+		}  
+	}
+
+}

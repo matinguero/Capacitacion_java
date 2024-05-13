@@ -6,7 +6,7 @@ public class OperadoresRelacionales {
 		int a = 10;
 		int b = 20;
 		
-		System.out.println("A es mayor a B?" + (a > b));
+		System.out.println("A es mayor a B? " + (a > b));
 		
 		if(a>b)
 		{
