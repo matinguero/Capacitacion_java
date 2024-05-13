@@ -48,7 +48,7 @@ public class EjemploArrayNotasDeAlumnos {
 		        + (promedioMatematica + promedioHistoria + promedioLengua)/3);  
 		System.out.println("Ingrese el identificador del alumno (de 0 - 6):");  
 		int id = s.nextInt();  
-		double promedioAlumno = (ClaseHistoria[id] + claseLengua[id] + clasematematicas[id])/3;  
+		double promedioAlumno = (ClaseHistoria[id] + claseLengua[id] + clasematematicas[id]);  
 		System.out.println("Promedio alumno Nro " + id + " : " + promedioAlumno);  
 		System.out.println("Fin del programa");
 	}

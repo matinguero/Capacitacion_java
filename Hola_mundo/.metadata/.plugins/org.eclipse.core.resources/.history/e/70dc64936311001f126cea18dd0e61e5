@@ -16,18 +16,21 @@ public class EjemploArrayNotasDeAlumnos {
 		System.out.println("Ingrese 7 notas de estudiantes para matematicas:");
 		for(int i = 0; i<clasematematicas.length; i++)
 		{
+			System.out.println("Otro:");
 			clasematematicas[i] = s.nextDouble();
 			
 		}
 		System.out.println("Ingrese 7 notas de estudiantes para historia:");
 		for(int i = 0; i<ClaseHistoria.length; i++)
 		{
+			System.out.println("Otro:");
 			ClaseHistoria[i] = s.nextDouble();
 			
 		}
 		System.out.println("Ingrese 7 notas de estudiantes para lengua:");
 		for(int i = 0; i<claseLengua.length; i++)
 		{
+			System.out.println("Otro:");
 			claseLengua[i] = s.nextDouble();
 			
 		}
@@ -48,9 +51,8 @@ public class EjemploArrayNotasDeAlumnos {
 		        + (promedioMatematica + promedioHistoria + promedioLengua)/3);  
 		System.out.println("Ingrese el identificador del alumno (de 0 - 6):");  
 		int id = s.nextInt();  
-		double promedioAlumno = (ClaseHistoria[id] + claseLengua[id] + clasematematicas[id])/3;  
+		double promedioAlumno = (ClaseHistoria[id] + claseLengua[id] + clasematematicas[id]);  
 		System.out.println("Promedio alumno Nro " + id + " : " + promedioAlumno);  
-		System.out.println("Fin del programa");
 	}
 
 }
