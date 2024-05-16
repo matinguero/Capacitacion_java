@@ -10,13 +10,12 @@ public class TvLcd extends Electronico{
 	
 	
 	
-	public TvLcd() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 
-	public TvLcd(int pulgada) {
-		super();
+	
+
+	public TvLcd(int precio, int pulgada) {
+		super(precio);
 		this.pulgada = pulgada;
 	}
 
@@ -27,6 +26,16 @@ public class TvLcd extends Electronico{
 	public void setPulgada(int pulgada) {
 		this.pulgada = pulgada;
 	}
+
+	
+
+	@Override
+	public double getPrecioventa() {
+		// TODO Auto-generated method stub
+		return this.getPrecioventa();
+	}
+
+	
 
 	
 	

@@ -1,6 +1,14 @@
 package entidades;
 
-public abstract class Electronico extends Producto{
+public abstract class Electronico extends Producto implements IElectronico{
+	
+	
+	public Electronico(int precio) {
+		super(precio);
+		// TODO Auto-generated constructor stub
+	}
+
+
 	private String fabricante;
 	
 	
@@ -8,9 +16,12 @@ public abstract class Electronico extends Producto{
 		return fabricante;
 	}
 
-	
 
 	
+
+
+	
+
 	
 	
 	
