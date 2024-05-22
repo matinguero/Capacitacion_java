@@ -13,7 +13,7 @@ public class ProyectoCatalogo {
 		IProducto[] productos = new Producto[6];
 		productos[2]= new TvLcd(340000, 40);
 		
-		imprimir(IProducto);
+	//	imprimir(IProducto);
 			
 	}
 
