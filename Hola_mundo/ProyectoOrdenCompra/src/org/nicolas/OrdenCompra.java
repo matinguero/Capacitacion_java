@@ -6,13 +6,13 @@ import Entidades.Cliente;
 import Entidades.Producto;
 
 public class OrdenCompra {
-	
+	//ATRIBUTOS
 	private int identificador;
 	private String descripcion;
 	private Date fecha;
 	private Producto productos[] = new Producto[4];
 	private Cliente cliente;
-	
+	//ATRIBUTOS
 	
 	
 	
