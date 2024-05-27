@@ -79,7 +79,7 @@ public class Empleado extends Persona{
 	public void aumentarRemuneracion(int porcentaje) {
 		double remu;
 		remu= (this.getRemuneracion()/100)*porcentaje;
-		this.setRemuneracion(remu);
+		this.setRemuneracion(this.getRemuneracion()+remu);
 	}
 
 

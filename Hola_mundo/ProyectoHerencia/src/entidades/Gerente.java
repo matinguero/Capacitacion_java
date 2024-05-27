@@ -21,7 +21,7 @@ public class Gerente extends Empleado {
 
 	@Override
 	public String toString() {
-		return "Clase Gerente \n Nombre: " + nombre + "\n Apellido: " + apellido +"\n DNI: "  + numerofiscal+"\n Direccion: " + direccion+ "\n Remuneracion: " + Remuneracion + "\n ID de empleado: "+ EmpleadoID +  "\n Presupuesto: " + Presupuesto;
+		return "Clase Gerente \n Nombre: " + nombre + "\n Apellido: " + apellido +"\n DNI: "  + numerofiscal+"\n Direccion: " + direccion+ "\n Remuneracion sin aumento: " + Remuneracion + "\n ID de empleado: "+ EmpleadoID +  "\n Presupuesto: " + Presupuesto;
 	}
 	
 	
