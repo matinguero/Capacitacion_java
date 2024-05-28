@@ -35,10 +35,30 @@ public class Ejemplo {
 	
 				for(int i=0; i<8; i++){
 				System.out.println(array[i].toString());
+				}
+				for(int i=0; i<8;i++) {
+					if(array[i] instanceof Lacteo) {
+						System.out.println("InstanceOf: LACTEO");
+						System.out.println(array[i].toString());
+				}else if(array[i] instanceof Fruta) {
+					System.out.println("InstanceOf: FRUTA");
+					System.out.println(array[i].toString());
+					
+				}else if(array[i] instanceof Limpieza) {
+					System.out.println("InstanceOf: LIMPIEZA");
+					System.out.println(array[i].toString());
+				
+				}else if(array[i] instanceof NoPerecible) {
+					System.out.println("InstanceOf: NoPerecible");
+					System.out.println(array[i].toString());
+				
+				}
+					
+				}
 		
 	}
 		
 		
 	}
 
-}
+
