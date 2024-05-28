@@ -42,7 +42,7 @@ public class Persona {
 	}
 	@Override
 	public String toString() {
-		return "Persona [nombre=" + nombre + ", apellido=" + apellido + ", numerofiscal=" + numerofiscal + ", direccion=" + direccion + "]";
+		return "\nnombre= " + nombre + ",\napellido= " + apellido + ",\nnumerofiscal= " + numerofiscal + ",\ndireccion= " + direccion;
 	}
 	
 	
