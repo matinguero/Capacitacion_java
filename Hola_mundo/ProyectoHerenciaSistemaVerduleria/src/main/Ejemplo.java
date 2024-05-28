@@ -37,20 +37,37 @@ public class Ejemplo {
 				System.out.println(array[i].toString());
 				}
 				for(int i=0; i<8;i++) {
+					  Producto producto = array[i];
+				        System.out.println("Nombre: " + producto.getNombre());
+				        System.out.println("Precio: " + producto.getPrecio());
+					
+					
 					if(array[i] instanceof Lacteo) {
+						Lacteo lacteo = (Lacteo) producto; // Casting a Lacteo
+			            						
 						System.out.println("InstanceOf: LACTEO");
-						System.out.println(array[i].toString());
+						System.out.println(lacteo.toString());
+						
 				}else if(array[i] instanceof Fruta) {
+					Fruta fruta = (Fruta) producto; // Casting a Fruta
+			           
+					
 					System.out.println("InstanceOf: FRUTA");
-					System.out.println(array[i].toString());
+					System.out.println(fruta.toString());
 					
 				}else if(array[i] instanceof Limpieza) {
+					Limpieza limpieza = (Limpieza) producto; // Casting a Limpieza
+			           
+					
 					System.out.println("InstanceOf: LIMPIEZA");
-					System.out.println(array[i].toString());
+					System.out.println(limpieza.toString());
 				
 				}else if(array[i] instanceof NoPerecible) {
+					NoPerecible noperecible = (NoPerecible) producto; // Casting a NoPerecible
+			           
+					
 					System.out.println("InstanceOf: NoPerecible");
-					System.out.println(array[i].toString());
+					System.out.println(noperecible.toString());
 				
 				}
 					
