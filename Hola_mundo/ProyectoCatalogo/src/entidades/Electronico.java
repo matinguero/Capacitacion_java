@@ -3,9 +3,10 @@ package entidades;
 public abstract class Electronico extends Producto implements IElectronico{
 	
 	
-	public Electronico(int precio) {
+
+	public Electronico(int precio, String fabricante) {
 		super(precio);
-		// TODO Auto-generated constructor stub
+		this.fabricante = fabricante;
 	}
 
 
@@ -16,6 +17,14 @@ public abstract class Electronico extends Producto implements IElectronico{
 		return fabricante;
 	}
 
+
+	@Override
+	public String toString() {
+		return "\n fabricante= " + fabricante +  super.toString();
+	}
+
+
+	
 
 	
 

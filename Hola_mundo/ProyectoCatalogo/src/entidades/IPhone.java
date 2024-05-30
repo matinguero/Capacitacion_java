@@ -11,8 +11,9 @@ public class IPhone  extends Electronico{
 	
 	
 	
-	public IPhone(int precio, String modelo, String color) {
-		super(precio);
+
+	public IPhone(int precio, String fabricante, String modelo, String color) {
+		super(precio, fabricante);
 		this.modelo = modelo;
 		this.color = color;
 	}
@@ -33,6 +34,10 @@ public class IPhone  extends Electronico{
 	public double getPrecioventa() {
 		// TODO Auto-generated method stub
 		return this.getPrecio();
+	}
+	@Override
+	public String toString() {
+		return " Iphone modelo= " + modelo + "\ncolor= " + color +  super.toString();
 	}
 	
 	

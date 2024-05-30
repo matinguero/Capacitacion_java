@@ -2,20 +2,15 @@ package entidades;
 
 public class TvLcd extends Electronico{
 	private int pulgada;
-	
-	
-	
-	
-	
-	
-	
-	
+		
+
 	
 
 	
 
-	public TvLcd(int precio, int pulgada) {
-		super(precio);
+
+	public TvLcd(int precio, String fabricante, int pulgada) {
+		super(precio, fabricante);
 		this.pulgada = pulgada;
 	}
 
@@ -33,6 +28,11 @@ public class TvLcd extends Electronico{
 	public double getPrecioventa() {
 		// TODO Auto-generated method stub
 		return this.getPrecioventa();
+	}
+
+	@Override
+	public String toString() {
+		return "TV pulgadas= " + pulgada +  super.toString();
 	}
 
 	
