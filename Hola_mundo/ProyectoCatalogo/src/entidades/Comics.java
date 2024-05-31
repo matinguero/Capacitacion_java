@@ -11,7 +11,15 @@ public class Comics extends Libro {
 		this.personaje = personaje;
 	}
 	
- @Override	
+	
+	
+ public String getPersonaje() {
+		return personaje;
+	}
+
+
+
+@Override	
 public double getPrecioventa() {
 		
 		return this.getPrecioventa();

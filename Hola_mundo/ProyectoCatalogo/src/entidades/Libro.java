@@ -40,7 +40,7 @@ public class Libro extends Producto implements ILibro{
 
 	@Override
 	public String toString() {
-		return " fechaPublicacion= " + fechaPublicacion + "\nautor= " + autor + "\ntitulo= " + titulo
+		return " \nfechaPublicacion= " + fechaPublicacion + "\nautor= " + autor + "\ntitulo= " + titulo
 				+ "\neditorial= " + editorial +  super.toString();
 	}
 
