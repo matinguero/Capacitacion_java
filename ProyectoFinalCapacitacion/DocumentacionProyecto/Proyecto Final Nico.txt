@@ -1,0 +1,13 @@
+﻿Proyecto final:
+
+Desarrolla un sistema de gestión de una concesionaria en Java que permita a los usuarios realizar diversas operaciones como agregar motos, buscar por modelo, marca y color, eliminar moto, cuando se efectúa la compra. El proyecto debe utilizar programación orientada a objetos y seguir los principios de encapsulamiento, herencia y polimorfismo. También se debe integrar el manejo de excepciones para controlar posibles errores durante la ejecución del programa.
+Realizar únicamente la interfaz de la clase Concesionaria donde deberá haber una lista de métodos (solamente cabeceras de métodos, sin implementación).
+La clase concesionaria contará con los atributos mencionados en UML, con sus respectivos métodos getter y setter, y su clase constructora. Además, deberá contar con los métodos:
+-        Buscar Moto, a la cual se le deberá mandar el modelo, marca y color, nos devolverá la posición donde se encuentra la moto.
+-        Eliminar Moto, debemos utilizar la función buscar moto, con la posición que nos devuelve debemos buscar y eliminar esa moto ya que esa moto sera vendida.
+La clase Moto:
+-        Agregar la canción, le enviaremos una canción(con todos sus datos) y esta se deberá agregar en la última posición del line up del show.
+La clase Cliente:
+-        Tiene Descuento, si el cliente fue ya realizó una compra, la variable es cliente Habitual será verdadera, se mandará una alerta que avise que tiene un cupón de descuento.
+ 
+Crear Main donde se deberán cargar 8 motos, 1 cliente y 1 empleado, donde los datos se deberán cargar por consola. Utilizar el método agregar motos para sumar 2 motos más, buscar un moto por lo que se pide más arriba y eliminarlo.
