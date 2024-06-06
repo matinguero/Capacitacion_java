@@ -39,8 +39,8 @@ public class Principal {
 		
 		
 		
-		Promedio();
-		MyF();
+		Promedio(lista);
+		MyF(lista);
 		
 		
 		
@@ -53,7 +53,7 @@ public class Principal {
 
 
 	}
-	public static void MyF() {
+	public static void MyF(List<Personanumero49000> lista) {
 		int m=0, f = 0 ;
 
 		for(int i = 0; i<5; i++) {
@@ -71,7 +71,7 @@ public class Principal {
 		
 	}
 	
-	public static void Promedio() {
+	public static void Promedio(List<Personanumero49000> lista ) {
 		int promedio=0;
 		int edadtotal=0;
 		for(int i = 0; i<5; i++) {
@@ -79,6 +79,8 @@ public class Principal {
 			edadtotal = edadtotal + lista.get(i).getEdad();
 			
 		}
+		promedio=edadtotal/5;
+		
 		System.out.println("promedio edad = " + promedio);
 	
 		
