@@ -47,9 +47,9 @@ public class EjemploString {
 		System.out.println("Starts with N: " + empiezacon);
 		
 		
-		String NombreDos = null;
+		//String NombreDos = null;
 		
-		System.out.println("Concatenacion de objeto String null: " + NombreDos.concat(nombre));
+		//System.out.println("Concatenacion de objeto String null: " + NombreDos.concat(nombre));
 		
 		
 		

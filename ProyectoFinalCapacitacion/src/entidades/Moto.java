@@ -3,10 +3,10 @@ package entidades;
 public class Moto {
 	String Marca;
 	String Modelo;
-	String Motor;
+	int Motor;
 	String Color;
 	int    anio;
-	public Moto(String marca, String modelo, String motor, String color, int anio) {
+	public Moto(String marca, String modelo, int motor, String color, int anio) {
 		super();
 		Marca = marca;
 		Modelo = modelo;
@@ -26,10 +26,10 @@ public class Moto {
 	public void setModelo(String modelo) {
 		Modelo = modelo;
 	}
-	public String getMotor() {
+	public int getMotor() {
 		return Motor;
 	}
-	public void setMotor(String motor) {
+	public void setMotor(int motor) {
 		Motor = motor;
 	}
 	public String getColor() {
@@ -44,8 +44,6 @@ public class Moto {
 	public void setAnio(int anio) {
 		this.anio = anio;
 	}
-	
-	
 	
 	
 	
