@@ -1,7 +1,7 @@
 package entidades;
 
 public interface IConcesionario {
-	public String buscarMoto();
-	public void eliminarMoto();
-	public void addMoto();
+	public int buscarMoto(String modelo);
+	public void eliminarMoto(String modelo);
+	public void addMoto(Moto addmoto);
 }

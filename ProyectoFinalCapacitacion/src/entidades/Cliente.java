@@ -1,18 +1,22 @@
 package entidades;
 
+import javax.swing.JOptionPane;
+
 public class Cliente extends Persona{
 	int idCompra;
-	Persona datos;
 	Boolean esCliente;
-	public Cliente(String nombre, String apellido, int edad, int idCompra, Persona datos, Boolean esCliente) {
+	
+	
+	
+	
+	public Cliente(String nombre, String apellido, int edad, int idCompra, Boolean esCliente) {
 		super(nombre, apellido, edad);
 		this.idCompra = idCompra;
-		this.datos = datos;
 		this.esCliente = esCliente;
 	}
-	
-	
-	
+
+
+
 	public Cliente() {
 		super();
 	}
@@ -25,12 +29,7 @@ public class Cliente extends Persona{
 	public void setIdCompra(int idCompra) {
 		this.idCompra = idCompra;
 	}
-	public Persona getDatos() {
-		return datos;
-	}
-	public void setDatos(Persona datos) {
-		this.datos = datos;
-	}
+
 	public Boolean getEsCliente() {
 		return esCliente;
 	}
@@ -40,7 +39,7 @@ public class Cliente extends Persona{
 	
 	public void tieneDesc() {
 		if(this.getEsCliente()==true) {
-			System.out.println("Tiene descuento");
+			JOptionPane.showMessageDialog(null, "Tiene descuento");
 			
 			
 			

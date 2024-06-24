@@ -17,7 +17,7 @@ public class Ejectuable {
 		Empleado EntidadEmpleado;
 		Persona Cliente = new Cliente();
 		Persona Empleado = new Empleado();
-		List<Concesionario> listaM = new ArrayList<Concesionario>();
+		Concesionario listaM = new Concesionario();
 		Scanner scanner = new Scanner(System.in);
 		String Nombre,Apellido;
 		int Edad;
@@ -25,7 +25,6 @@ public class Ejectuable {
 		String input = "hello";
 		String padded = String.format("%-150s", input); // Pads the string with spaces to the right
 		*/
-		
 		System.out.println("Carga de Persona Cliente");
 		
 		System.out.println("Nombre:");
@@ -36,10 +35,10 @@ public class Ejectuable {
 
 		System.out.println("Edad:");
 		Edad = scanner.nextInt();
-		 
-		Cliente.setNombre(Nombre);
-		Cliente.setApellido(Apellido);
-		Cliente.setEdad(Edad);
+		scanner.nextLine();
+		EntidadCliente = new Cliente(Nombre,Apellido, Edad, 23, false);
+		
+		EntidadCliente.tieneDesc();
 		
 		System.out.println("Carga de Persona Empleado");
 		
@@ -49,14 +48,12 @@ public class Ejectuable {
 		Apellido = scanner.nextLine();
 		System.out.println("Edad:");
 		Edad = scanner.nextInt();
+		scanner.nextLine();
+		EntidadEmpleado = new Empleado(Nombre, Apellido, Edad, 1);
+		
+		
 		 
-		Empleado.setNombre(Nombre);
-		Empleado.setApellido(Apellido);
-		Empleado.setEdad(Edad);
 		
-		
-		EntidadCliente = new Cliente(Cliente.getNombre(),Cliente.getApellido(), Cliente.getEdad(), 23, Cliente, true);
-		EntidadEmpleado = new Empleado(Empleado.getNombre(), Empleado.getApellido(), Empleado.getEdad(), Empleado, 1);
 		
 		
 		String Marca;  
@@ -64,7 +61,7 @@ public class Ejectuable {
 		int Cilindrada;  
 		String Color; 
 		int Anio;  
-		for(int i = 0; i<8; i++) {
+		for(int i = 0; i<2; i++) {
 			System.out.println("Ingrese moto " + i);
 			System.out.println("Ingrese Marca:");
 			Marca =scanner.nextLine(); 
@@ -76,17 +73,34 @@ public class Ejectuable {
 			Anio = scanner.nextInt(); 
 			System.out.println("Ingrese Cilindrada:");
 			Cilindrada = scanner.nextInt(); 
+			scanner.nextLine();
 			
-			listaM.add(new Concesionario(Marca, Modelo, Cilindrada, Color, Anio, EntidadEmpleado, null, EntidadCliente));
+			Moto moto = new Moto(Marca, Modelo, Cilindrada, Color, Anio);
+			
+			listaM.addMoto(moto);
 			
 		}
 		
 		
+
 		
 		
+		System.out.println("Producto Sin eliminar:");
+	    System.out.println(listaM.getMotos().toString());
+			
 		
+		String borrar;
+		System.out.println("ingrese modelo a borrar:");
+		borrar = scanner.nextLine();
 		
+		listaM.eliminarMoto(borrar);
 		
+
+	
+			System.out.println("Producto eliminado.");
+			System.out.println(listaM.getMotos().toString());
+			
+			
 		
 	}
 

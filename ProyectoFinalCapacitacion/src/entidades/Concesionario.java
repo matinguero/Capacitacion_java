@@ -1,21 +1,27 @@
 package entidades;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Concesionario extends Moto implements IConcesionario{
 	Empleado empleado;
-	Moto motos[];
+public	List<Moto> motos = new ArrayList<Moto>();
 	Cliente cliente;
 
 	
 	
+	
+	
+	
 	public Concesionario(String marca, String modelo, int motor, String color, int anio, Empleado empleado,
-			Moto[] motos, Cliente cliente) {
+			List<Moto> motos, Cliente cliente) {
 		super(marca, modelo, motor, color, anio);
 		this.empleado = empleado;
 		this.motos = motos;
 		this.cliente = cliente;
 	}
-	
-	
+
+
 	public Concesionario() {
 		super();
 	}
@@ -27,12 +33,17 @@ public class Concesionario extends Moto implements IConcesionario{
 	public void setEmpleado(Empleado empleado) {
 		this.empleado = empleado;
 	}
-	public Moto[] getMotos() {
+
+	public List<Moto> getMotos() {
 		return motos;
 	}
-	public void setMotos(Moto[] motos) {
+
+
+	public void setMotos(List<Moto> motos) {
 		this.motos = motos;
 	}
+
+
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -40,23 +51,42 @@ public class Concesionario extends Moto implements IConcesionario{
 		this.cliente = cliente;
 	}
 	@Override
-	public String buscarMoto() {
+	public int buscarMoto(String modelo) {
+		int contador = 0;
+		for(Moto buscarmoto:motos) {
+			
+			
+			if(buscarmoto.getModelo().equals(modelo)) {
+				
+				
+				return contador;
+			}
+			contador++;
+			
+		}
 		
 		
 		
 		
 		
-		
-		
-		return null;
+		return 404;
 	}
 	@Override
-	public void eliminarMoto() {
+	public String toString() {
+		return "\n empleado= " + empleado + "\\nmotos= " + motos + "\\ncliente= " + cliente + "\\nMarca= " + Marca
+				+ "\\nModelo= " + Modelo + "\\nMotor= " + Motor + "\\nColor= " + Color + "\\nanio= " + anio;
+	}
+
+
+	@Override
+	public void eliminarMoto(String modelo) {
 		
+		motos.remove(this.buscarMoto(modelo));
 		
 	}
 	@Override
-	public void addMoto() {
+	public void addMoto(Moto addmoto) {
+		motos.add(addmoto);
 		
 		
 	}

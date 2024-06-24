@@ -47,6 +47,11 @@ public class Moto {
 	public void setAnio(int anio) {
 		this.anio = anio;
 	}
+	@Override
+	public String toString() {
+		return "\n Marca= " + Marca + "\\nModelo= " + Modelo + "\\nMotor= " + Motor + "\\nColor= " + Color + "\\nanio= "
+				+ anio;
+	}
 	
 	
 	
