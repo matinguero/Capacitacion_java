@@ -1,17 +1,26 @@
 package entidades;
 
-public class Concesionario implements IConcesionario{
+public class Concesionario extends Moto implements IConcesionario{
 	Empleado empleado;
 	Moto motos[];
 	Cliente cliente;
 
 	
-	public Concesionario(Empleado empleado, Moto[] motos, Cliente cliente) {
-		super();
+	
+	public Concesionario(String marca, String modelo, int motor, String color, int anio, Empleado empleado,
+			Moto[] motos, Cliente cliente) {
+		super(marca, modelo, motor, color, anio);
 		this.empleado = empleado;
 		this.motos = motos;
 		this.cliente = cliente;
 	}
+	
+	
+	public Concesionario() {
+		super();
+	}
+
+
 	public Empleado getEmpleado() {
 		return empleado;
 	}
@@ -43,12 +52,12 @@ public class Concesionario implements IConcesionario{
 	}
 	@Override
 	public void eliminarMoto() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	@Override
 	public void addMoto() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	

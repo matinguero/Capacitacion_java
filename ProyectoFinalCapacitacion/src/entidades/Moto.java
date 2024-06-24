@@ -14,6 +14,9 @@ public class Moto {
 		Color = color;
 		this.anio = anio;
 	}
+	public Moto() {
+		super();
+	}
 	public String getMarca() {
 		return Marca;
 	}

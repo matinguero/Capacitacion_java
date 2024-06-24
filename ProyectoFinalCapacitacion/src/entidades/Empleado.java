@@ -8,6 +8,13 @@ public class Empleado extends Persona{
 		this.datos = datos;
 		this.idEmpleado = idEmpleado;
 	}
+	
+	
+	public Empleado() {
+		super();
+	}
+
+
 	public Persona getDatos() {
 		return datos;
 	}

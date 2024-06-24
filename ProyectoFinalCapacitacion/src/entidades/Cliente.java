@@ -10,6 +10,15 @@ public class Cliente extends Persona{
 		this.datos = datos;
 		this.esCliente = esCliente;
 	}
+	
+	
+	
+	public Cliente() {
+		super();
+	}
+
+
+
 	public int getIdCompra() {
 		return idCompra;
 	}

@@ -17,6 +17,13 @@ public class Persona {
 		Apellido = apellido;
 		Edad = edad;
 	}
+	
+	
+	public Persona() {
+		super();
+	}
+
+
 	public String getNombre() {
 		return Nombre;
 	}
