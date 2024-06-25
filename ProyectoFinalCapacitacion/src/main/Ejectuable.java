@@ -15,8 +15,7 @@ public class Ejectuable {
 	public static void main(String[] args) {
 		Cliente EntidadCliente;
 		Empleado EntidadEmpleado;
-		Persona Cliente = new Cliente();
-		Persona Empleado = new Empleado();
+		
 		Concesionario listaM = new Concesionario();
 		Scanner scanner = new Scanner(System.in);
 		String Nombre,Apellido;
@@ -100,7 +99,7 @@ public class Ejectuable {
 			System.out.println("Producto eliminado.");
 			System.out.println(listaM.getMotos().toString());
 			
-			
+		System.out.println("Fin del programa.");	
 		
 	}
 

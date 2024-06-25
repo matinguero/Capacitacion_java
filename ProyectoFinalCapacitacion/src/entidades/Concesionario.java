@@ -73,8 +73,8 @@ public	List<Moto> motos = new ArrayList<Moto>();
 	}
 	@Override
 	public String toString() {
-		return "\n empleado= " + empleado + "\\nmotos= " + motos + "\\ncliente= " + cliente + "\\nMarca= " + Marca
-				+ "\\nModelo= " + Modelo + "\\nMotor= " + Motor + "\\nColor= " + Color + "\\nanio= " + anio;
+		return " \n empleado= " + empleado + "\nmotos= " + motos + "\ncliente= " + cliente + "\nMarca= " + Marca
+				+ "\nModelo= " + Modelo + "\nMotor= " + Motor + "\nColor= " + Color + "\nanio= " + anio;
 	}
 
 

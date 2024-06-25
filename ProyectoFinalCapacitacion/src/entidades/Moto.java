@@ -49,7 +49,7 @@ public class Moto {
 	}
 	@Override
 	public String toString() {
-		return "\n Marca= " + Marca + "\\nModelo= " + Modelo + "\\nMotor= " + Motor + "\\nColor= " + Color + "\\nanio= "
+		return " \n Marca= " + Marca + "\nModelo= " + Modelo + "\nMotor= " + Motor + "\nColor= " + Color + "\nanio= "
 				+ anio;
 	}
 	
