@@ -14,9 +14,11 @@ public class Ejectuable {
 
 	public static void main(String[] args) {
 		Cliente EntidadCliente;
+		@SuppressWarnings("unused")
 		Empleado EntidadEmpleado;
 		
 		Concesionario listaM = new Concesionario();
+		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		String Nombre,Apellido;
 		int Edad;
