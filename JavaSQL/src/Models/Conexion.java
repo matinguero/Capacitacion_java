@@ -7,24 +7,15 @@ import java.sql.SQLException;
 import java.util.logging.Logger;
 
 public class Conexion {
-	private final String base = "tienda";
-	private final String user = "root";
-	private final String password = "1234";
-	private final String url = "jdbc:mysql://localhost:3306/" + base;
-	private Connection con = null;
+	
+	
+	    private static final String URL = "jdbc:mysql://localhost:3306/bdmusica";
+	    private static final String USERNAME = "root";
+	    private static final String PASSWORD = "enzo109";
 
-	public Connection getConexion() throws ClassNotFoundException
-	{
-	    try{
-	        Class.forName("com.mysql.jdbc.Driver");
-	        con = (Connection) DriverManager.getConnection(this.url, this.user, this.password);
+	    public static Connection getConnection() throws SQLException {
+	        return DriverManager.getConnection(URL, USERNAME, PASSWORD);
 	    }
-	    catch(SQLException e)
-	    {
-	        System.err.println(e);
-	    }
-	    
-	    return con;
-	}
+	
 
 }

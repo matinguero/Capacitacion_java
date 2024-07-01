@@ -2,7 +2,10 @@ package principal;
 
 import java.util.Scanner;
 
+import Models.CRUD;
+
 public class Ejecutable {
+	
 
 	public static void main(String[] args) {
 		Boolean flag=true;
@@ -42,22 +45,30 @@ public class Ejecutable {
 			
 			 switch (opc) {
 	            case 1:
+	            	String Nombre;
+	            	String Duracion;
+	            	String Artista;
 	                System.out.println("Insertar Seleccionado");
+	                
+	                
 	                
 	                
 	                break;
 	            case 2:
-	                System.out.println("Buscar Seleccionado");
+	            	String Nombre2;
+	            	System.out.println("Buscar Seleccionado");
 	                
 	                
 	                
 	                break;
 	            case 3:
+	            	String Nombre3;
 	                System.out.println("Actualizar Seleccionado");
 	                
 	                
 	                break;
 	            case 4:
+	            	String Nombre4;
 	                System.out.println("Borrar Seleccionado");
 	                
 	                
@@ -76,6 +87,55 @@ public class Ejecutable {
 			
 		
 		System.out.println("FIN DEL PROGRAMA.");
+		
+
+	  
+	       
+	        CRUD crud = new CRUD();
+	        boolean running = true;
+
+	        while (running) {
+
+	            int option = scanner.nextInt();
+	            scanner.nextLine(); // Consume newline
+
+	            switch (option) {
+	                case 1:
+	                    System.out.print("Enter student name: ");
+	                    String name = scanner.nextLine();
+	                    System.out.print("Enter student age: ");
+	                    int age = scanner.nextInt();
+	                    crud.createStudent(name, age);
+	                    break;
+	                case 2:
+	                	crud.readStudents();
+	                    break;
+	                case 3:
+	                    System.out.print("Enter student id to update: ");
+	                    int idToUpdate = scanner.nextInt();
+	                    scanner.nextLine(); // Consume newline
+	                    System.out.print("Enter new name: ");
+	                    String newName = scanner.nextLine();
+	                    System.out.print("Enter new age: ");
+	                    int newAge = scanner.nextInt();
+	                    crud.updateStudent(idToUpdate, newName, newAge);
+	                    break;
+	                case 4:
+	                    System.out.print("Enter student id to delete: ");
+	                    int idToDelete = scanner.nextInt();
+	                    crud.deleteStudent(idToDelete);
+	                    break;
+	                case 5:
+	                    running = false;
+	                    break;
+	                default:
+	                    System.out.println("Invalid option. Try again.");
+	            }
+	        }
+
+	        scanner.close();
+	    
+	    
 		
 	}
 
