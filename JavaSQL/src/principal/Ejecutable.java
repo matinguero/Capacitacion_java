@@ -11,7 +11,7 @@ public class Ejecutable {
 		Scanner scanner = new Scanner(System.in);
 		Boolean Verificacion;
 		System.out.println("Programa Musicas con JDBC:");
-		while(Flag==true) {
+
 			Verificacion=true;
 			System.out.println("Menu:");
 			System.out.println("1- Insertar");
@@ -74,32 +74,7 @@ public class Ejecutable {
 			
 			
 			
-			
-			while(Verificacion=true) {
-				
-			try {
-				
-			System.out.println("Desea continuar la ejecucion del programa? S-si / X-no");
-
-			
-			String Letra = scanner.nextLine(); 
-			if(Letra.toLowerCase()=="s")
-			{
-				Flag=true;
-				Verificacion=false;
-			}else {
-				Flag=false;
-				Verificacion=false;
-			}
-				
-			
-			}catch(Exception e) {
-				Verificacion=true;
-			System.out.println("Ingrese un valor valido:");
-			scanner.nextLine(); 
-			}
-			}
-		} 
+		
 		System.out.println("FIN DEL PROGRAMA.");
 		
 	}
