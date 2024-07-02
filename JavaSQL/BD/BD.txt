@@ -11,3 +11,60 @@ CREATE TABLE `musica` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+								--PROCEDURES--
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spBorrarMusica`(IN idIN int)
+BEGIN
+delete from musica
+where id=idIN;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spBuscarMusica`(IN nombre varchar(150))
+BEGIN
+ SELECT * FROM musica WHERE nombre LIKE CONCAT('%', nombre, '%') limit 1;
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spInsertarMusica`(
+    IN Nombre VARCHAR(100), 
+    IN Duracion TIME,
+    IN Artista VARCHAR(150)
+    )
+BEGIN
+ INSERT INTO musica (Nombre, Duracion, Artista)
+    VALUES (Nombre, Duracion, Artista);
+END$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spUpdateMusica`(IN nombre varchar(150), IN duracion time, IN Artista Varchar(150), IN idIN int)
+BEGIN
+
+
+if nombre!="" then
+
+update musica set Nombre=nombre where id=idIN;
+
+end if;
+
+if duracion!="00:00:00" then
+
+update musica set Duracion=duracion where id=idIN;
+
+end if;
+if artista!="" then
+
+update musica set Artista=artista where id=idIN;
+
+end if;
+
+
+
+
+END$$
+DELIMITER ;
