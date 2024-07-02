@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>BD/BD</name>
+			<type>1</type>
+			<location>C:/Users/nicol/Documents/Repos/Java/Capacitacion_java/JavaSQL/BD/BD.txt</location>
+		</link>
+	</linkedResources>
 </projectDescription>
