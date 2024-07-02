@@ -1,9 +1,13 @@
 package principal;
+import java.sql.Time;
 
 import java.util.Scanner;
 
 import Models.CRUD;
-
+import java.util.Scanner;
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 public class Ejecutable {
 	
 
@@ -13,6 +17,7 @@ public class Ejecutable {
 		Boolean Flag = true;
 		Scanner scanner = new Scanner(System.in);
 		Boolean Verificacion;
+		 CRUD crud = new CRUD();
 		System.out.println("Programa Musicas con JDBC:");
 
 			Verificacion=true;
@@ -41,36 +46,59 @@ public class Ejecutable {
 				System.out.println("ingrese un valor valido:");
 			}
 			}
-			
+			scanner.nextLine();
 			
 			 switch (opc) {
 	            case 1:
-	            	String Nombre;
-	            	String Duracion;
-	            	String Artista;
+	            	
 	                System.out.println("Insertar Seleccionado");
-	                
+	                System.out.print("Ingrese Nombre de cancion: ");
+                    String name = scanner.nextLine();
+                    System.out.print("Ingrese duracion(HH:MM:SS): ");
+                    String duracionStr = scanner.nextLine();
+                    Time duracion = parseTime(duracionStr);
+
+                    System.out.print("Ingrese Artista: ");
+                    String artista = scanner.nextLine();
+                    crud.InsertarCancion(name, duracion, artista);
 	                
 	                
 	                
 	                break;
 	            case 2:
-	            	String Nombre2;
+	            	 
 	            	System.out.println("Buscar Seleccionado");
+	            	System.out.println("Ingrese el Nombre: ");
+	            	String nombre = scanner.nextLine();
+	            	crud.BuscarMusica(nombre);
+	            	
+                    break;
 	                
 	                
-	                
-	                break;
 	            case 3:
-	            	String Nombre3;
 	                System.out.println("Actualizar Seleccionado");
+	                System.out.print("Ingresa el id a updatear: ");
+                    int idU = scanner.nextInt();
+                    scanner.nextLine(); 
+                    System.out.print("Ingresa nuevo nombre(no cambiar: ENTER sin escritura): ");
+                    String NombreU = scanner.nextLine();
+                    System.out.print("Ingresa la duracion en formato (HH:MM:SS)(no cambiar: 00:00:00): ");
+                    String duracionStr1 = scanner.nextLine();
+                    Time Duracion = parseTime(duracionStr1);
+                    System.out.println("Ingresa el artista(no cambiar: ENTER sin escritura): ");
+                    String Artista= scanner.nextLine();
+                    crud.updateStudent(idU, NombreU, Duracion, Artista);
+                    break;
 	                
 	                
-	                break;
+	                
+	                
 	            case 4:
-	            	String Nombre4;
 	                System.out.println("Borrar Seleccionado");
-	                
+	                System.out.print("Ingrese id de la musica a borrar: ");
+                    int idBorrar = scanner.nextInt();
+                    crud.BorrarCancion(idBorrar);
+                   
 	                
 	                
 	                break;
@@ -88,56 +116,26 @@ public class Ejecutable {
 		
 		System.out.println("FIN DEL PROGRAMA.");
 		
-
+		
 	  
 	       
-	        CRUD crud = new CRUD();
-	        boolean running = true;
-
-	        while (running) {
-
-	            int option = scanner.nextInt();
-	            scanner.nextLine(); // Consume newline
-
-	            switch (option) {
-	                case 1:
-	                    System.out.print("Enter student name: ");
-	                    String name = scanner.nextLine();
-	                    System.out.print("Enter student age: ");
-	                    int age = scanner.nextInt();
-	                    crud.createStudent(name, age);
-	                    break;
-	                case 2:
-	                	crud.readStudents();
-	                    break;
-	                case 3:
-	                    System.out.print("Enter student id to update: ");
-	                    int idToUpdate = scanner.nextInt();
-	                    scanner.nextLine(); // Consume newline
-	                    System.out.print("Enter new name: ");
-	                    String newName = scanner.nextLine();
-	                    System.out.print("Enter new age: ");
-	                    int newAge = scanner.nextInt();
-	                    crud.updateStudent(idToUpdate, newName, newAge);
-	                    break;
-	                case 4:
-	                    System.out.print("Enter student id to delete: ");
-	                    int idToDelete = scanner.nextInt();
-	                    crud.deleteStudent(idToDelete);
-	                    break;
-	                case 5:
-	                    running = false;
-	                    break;
-	                default:
-	                    System.out.println("Invalid option. Try again.");
-	            }
-	        }
+	       
+	      
 
 	        scanner.close();
 	    
 	    
 		
 	}
-
+	  private static Time parseTime(String timeStr) {
+	        try {
+	            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+	            java.util.Date date = sdf.parse(timeStr);
+	            return new Time(date.getTime());
+	        } catch (ParseException e) {
+	            System.out.println("Invalid time format. Please enter time in HH:mm:ss format.");
+	            return null;
+	        }
+	    }
 }
 

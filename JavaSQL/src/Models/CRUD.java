@@ -4,61 +4,65 @@ import java.util.Scanner;
 
 public class CRUD {
 	
-	 public void createStudent(String name, int age) {
-	        String sql = "INSERT INTO students (name, age) VALUES (?, ?)";
+	 public void InsertarCancion(String name, Time Duracion, String Artista) {
+	        String sql = "CALL spInsertarMusica(?,?,?)";
 
 	        try (Connection conn = Conexion.getConnection();
-	             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	        		CallableStatement sp = conn.prepareCall(sql)) {
 
-	            pstmt.setString(1, name);
-	            pstmt.setInt(2, age);
-	            pstmt.executeUpdate();
+	        	sp.setString(1, name);
+	        	sp.setTime(2, Duracion);
+	        	sp.setString(3, Artista);
+	        	sp.executeUpdate();
 
-	            System.out.println("Student added successfully!");
+	            System.out.println("Alumno insertado con exito!");
 
 	        } catch (SQLException e) {
 	            System.out.println(e.getMessage());
 	        }
 	    }
 
-	    public void readStudents() {
-	        String sql = "SELECT * FROM students";
+	    public void BuscarMusica(String nombre) {
+	    	String sql = "{CALL spBuscarMusica(?)}";
 
 	        try (Connection conn = Conexion.getConnection();
-	             Statement stmt = conn.createStatement();
-	             ResultSet rs = stmt.executeQuery(sql)) {
-
+	        		CallableStatement sp = conn.prepareCall(sql)) {
+	        	sp.setString(1, nombre);
+	        	 ResultSet rs = sp.executeQuery();
 	            while (rs.next()) {
-	                System.out.println(rs.getInt("id") + "\t" +
-	                                   rs.getString("name") + "\t" +
-	                                   rs.getInt("age"));
-	            }
+	                System.out.println("ID: " + rs.getInt("id") + "\n" +
+	                                   "Nombre: " + rs.getString("Nombre") + "\n" +
+	                                   "Duracion: " + rs.getTime("Duracion") + "\n"  +
+	                				   "Fecha de publicacion: " + rs.getDate("Fecha_publicacion") + "\n" +
+	                                   "Artista: " + rs.getString("Artista"));
+	            }	
 
 	        } catch (SQLException e) {
 	            System.out.println(e.getMessage());
 	        }
 	    }
 
-	    public void updateStudent(int id, String name, int age) {
-	        String sql = "UPDATE students SET name = ?, age = ? WHERE id = ?";
+	    public void updateStudent(int idIN, String nombre, Time duracion, String artista) {
+	        String sql = "CALL spUpdateMusica(?,?,?,?)";
 
 	        try (Connection conn = Conexion.getConnection();
 	             PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-	            pstmt.setString(1, name);
-	            pstmt.setInt(2, age);
-	            pstmt.setInt(3, id);
+	            pstmt.setString(1, nombre);
+	            pstmt.setTime(2, duracion);
+	            pstmt.setString(3, artista);
+	            pstmt.setInt(4, idIN);
 	            pstmt.executeUpdate();
 
-	            System.out.println("Student updated successfully!");
+	            System.out.println("Cancion updateada con exito!");
 
 	        } catch (SQLException e) {
 	            System.out.println(e.getMessage());
 	        }
 	    }
 
-	    public void deleteStudent(int id) {
-	        String sql = "DELETE FROM students WHERE id = ?";
+	    public void BorrarCancion(int id) {
+	        String sql = "call spBorrarMusica(?)";
 
 	        try (Connection conn = Conexion.getConnection();
 	             PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -66,7 +70,7 @@ public class CRUD {
 	            pstmt.setInt(1, id);
 	            pstmt.executeUpdate();
 
-	            System.out.println("Student deleted successfully!");
+	            System.out.println("Musica borrada con exito!");
 
 	        } catch (SQLException e) {
 	            System.out.println(e.getMessage());
