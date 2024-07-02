@@ -15,7 +15,7 @@ public class CRUD {
 	        	sp.setString(3, Artista);
 	        	sp.executeUpdate();
 
-	            System.out.println("Alumno insertado con exito!");
+	            System.out.println("Musica insertada con exito!");
 
 	        } catch (SQLException e) {
 	            System.out.println(e.getMessage());
