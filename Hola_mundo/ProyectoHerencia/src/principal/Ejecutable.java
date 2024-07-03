@@ -1,8 +1,6 @@
 package principal;
 
-import entidades.Empleado;
 import entidades.Gerente;
-import entidades.Persona;
 
 public class Ejecutable {
 

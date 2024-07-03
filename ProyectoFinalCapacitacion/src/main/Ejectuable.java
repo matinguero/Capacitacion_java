@@ -1,24 +1,21 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import entidades.Cliente;
 import entidades.Concesionario;
 import entidades.Empleado;
 import entidades.Moto;
-import entidades.Persona;
 
 public class Ejectuable {
 
 	public static void main(String[] args) {
 		Cliente EntidadCliente;
-		@SuppressWarnings("unused")
-		Empleado EntidadEmpleado;
+		
+		
 		
 		Concesionario listaM = new Concesionario();
-		@SuppressWarnings("resource")
+		
 		Scanner scanner = new Scanner(System.in);
 		String Nombre,Apellido;
 		int Edad;
@@ -50,7 +47,7 @@ public class Ejectuable {
 		System.out.println("Edad:");
 		Edad = scanner.nextInt();
 		scanner.nextLine();
-		EntidadEmpleado = new Empleado(Nombre, Apellido, Edad, 1);
+		Empleado EntidadEmpleado = new Empleado(Nombre, Apellido, Edad, 1);
 		
 		
 		 
@@ -100,9 +97,9 @@ public class Ejectuable {
 	
 			System.out.println("Producto eliminado.");
 			System.out.println(listaM.getMotos().toString());
-			
+		System.out.println(EntidadEmpleado.toString());
 		System.out.println("Fin del programa.");	
-		
-	}
 
+		scanner.close();
+	}
 }
