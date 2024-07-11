@@ -1,0 +1,29 @@
+<?page title="Busqueda Musica" contentType="text/html;charset=UTF-8"?>
+<zk xmlns="http://www.zkoss.org/2005/zul">
+    <window id="musicWindow" apply="controllers.ControllerMusica">
+        <vbox>
+            <hbox spacing="10px">
+                <textbox id="searchTextbox" placeholder="Enter search term"/>
+                <button id="searchButton" label="Search" onClick="@command('search')"/>
+            </hbox>
+            <listbox id="musicListbox" model="@load(vm.musicList)" width="800px">
+                <listhead>
+                    <listheader label="ID"/>
+                    <listheader label="Nombre"/>
+                    <listheader label="Duración"/>
+                    <listheader label="Fecha"/>
+                    <listheader label="Artista"/>
+                </listhead>
+                <template name="model" var="music">
+                    <listitem>
+                        <listcell label="@load(music.id)"/>
+                        <listcell label="@load(music.Nombre)"/>
+                        <listcell label="@load(music.Duracion)"/>
+                        <listcell label="@load(music.Fecha)"/>
+                        <listcell label="@load(music.Artista)"/>
+                    </listitem>
+                </template>
+            </listbox>
+        </vbox>
+    </window>
+</zk>

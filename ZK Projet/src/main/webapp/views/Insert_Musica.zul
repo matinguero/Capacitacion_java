@@ -1,0 +1,9 @@
+<?page title="Insertar musica" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Insertar musica" border="normal">
+<label value="" />
+
+
+
+</window>
+</zk>

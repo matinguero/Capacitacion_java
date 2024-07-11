@@ -1,0 +1,19 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window title="Listado de musicas" border="normal">
+<label value="" />
+
+<listbox>
+    <listhead>
+        <listheader label="Código"/>
+        <listheader label="Nombre" />
+        <listheader label="Descripción" />
+        <listheader label="Precio" />
+    </listhead>
+    <listitem>
+       
+    </listitem>
+</listbox>
+
+</window>
+</zk>

@@ -1,6 +1,8 @@
 <?page title="Auto Generated index.zul"?>
-<window title="Hello World hola mundo!!" border="normal" width="200px">
+<window title="Hello World hola mundo!!" border="normal" width="200px" apply="controllers.indexController">
 
-<label value="You are using: ${desktop.webApp.version}"/>
 
+
+<label id="lblSaludo"/>
+<button id="btnSaludo" label="DemoEvento" />
 </window>
