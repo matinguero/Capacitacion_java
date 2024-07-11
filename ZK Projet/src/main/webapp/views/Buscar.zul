@@ -6,7 +6,7 @@
                 <textbox id="searchTextbox" placeholder="Enter search term"/>
                 <button id="searchButton" label="Search" onClick="@command('search')"/>
             </hbox>
-            <listbox id="musicListbox" model="@load(vm.musicList)" width="800px">
+            <listbox id="HistorialListBox" model="@{ControllerMusica$composer.musicList}" width="800px">
                 <listhead>
                     <listheader label="ID"/>
                     <listheader label="Nombre"/>
@@ -14,13 +14,13 @@
                     <listheader label="Fecha"/>
                     <listheader label="Artista"/>
                 </listhead>
-                <template name="model" var="music">
-                    <listitem>
-                        <listcell label="@load(music.id)"/>
-                        <listcell label="@load(music.Nombre)"/>
-                        <listcell label="@load(music.Duracion)"/>
-                        <listcell label="@load(music.Fecha)"/>
-                        <listcell label="@load(music.Artista)"/>
+                <template name="model">
+                    <listitem self="@{each=historial}">
+                        <listcell label="@{historial.id }"/>
+                        <listcell label="@{historial.Nombre }"/>
+                        <listcell label="@{historial.Duracion }"/>
+                        <listcell label="@{historial.Fecha }"/>
+                        <listcell label="@{historial.Artista }"/>
                     </listitem>
                 </template>
             </listbox>
