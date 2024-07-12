@@ -21,7 +21,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ControllerMusica extends GenericForwardComposer<Component> {
-int cont;
 	int flag=0;
     @Wire
     private Listbox musicListbox;
@@ -29,7 +28,7 @@ int cont;
     @Wire
     private Textbox searchTextbox;
 
-    private ArrayList<Musicas> musicList;
+    private ArrayList<Musicas> musicList= new ArrayList<>();
     public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
         init(); // Call init method after composing to initialize data and UI
@@ -41,14 +40,15 @@ int cont;
     public void onClick$searchButton(ForwardEvent event) {
     	
     	if (flag==0) {
-    		cont=1;
+    		flag=1;
     	}else {
     		
     		musicList.clear();
+    		musicListbox.getItems().clear();
     	}
     	
     	 // Initialize data (simulated for demonstration)
-        musicList = new ArrayList<>();
+        
         musicList.add(new Musicas(1, "Song A", "4:30", "2024-07-12", "Artist A", "songA.mp3"));
         musicList.add(new Musicas(2, "Song B", "3:45", "2024-07-11", "Artist B", "songB.mp3"));
 
