@@ -6,7 +6,7 @@
                 <textbox id="searchTextbox" placeholder="Enter search term"/>
                 <button id="searchButton" label="Search" onClick="@command('search')"/>
             </hbox>
-            <listbox id="HistorialListBox" model="@{ControllerMusica$composer.musicList}" width="800px">
+            <listbox id="musicListbox" model="@{ControllerMusica$composer.musicList}" width="800px">
                 <listhead>
                     <listheader label="ID"/>
                     <listheader label="Nombre"/>

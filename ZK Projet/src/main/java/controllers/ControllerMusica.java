@@ -10,7 +10,9 @@ import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
+import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Textbox;
+import org.zkoss.zul.Listitem;
 
 import models.Musicas;
 
@@ -41,6 +43,38 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
         // Set model for listbox
         musicListbox.setModel(new ListModelList<>(musicList));
         
+        Listitem item;
+        Listcell cell;
+        
+        for(Musicas itemNuevo : musicList) {
+        	
+        	    item = new Listitem();
+        	    item.setParent(musicListbox);
+        	    item.setValue(itemNuevo);
+        	    
+        	    cell = new Listcell();
+        	    cell.setParent(item);
+        	    cell.setLabel(String.valueOf(itemNuevo.getId()));
+        	    
+        	    cell = new Listcell();
+        	    cell.setParent(item);
+        	    cell.setLabel(itemNuevo.getNombre());
+        	    
+        	    cell = new Listcell();
+        	    cell.setParent(item);
+        	    cell.setLabel(itemNuevo.getArtista());
+        	    
+        	    cell = new Listcell();
+        	    cell.setParent(item);
+        	    cell.setLabel(itemNuevo.getDuracion().toString());
+        	    
+        	    cell = new Listcell();
+        	    cell.setParent(item);
+        	    cell.setLabel(itemNuevo.getFilename());
+        	
+
+        	
+        }
         
     }
 
