@@ -15,8 +15,13 @@ import org.zkoss.zul.Listcell;
 import org.zkoss.zul.Textbox;
 import org.zkoss.zul.Listitem;
 
+import models.Conexion;
 import models.Musicas;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +43,39 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
        
     }
     public void onClick$searchButton(ForwardEvent event) {
+    	
+    	String searchTerm = searchTextbox.getValue();
+        musicList.clear();
+        musicListbox.getItems().clear();
+        try (Connection conn = Conexion.getConnection()) {
+            String query = "SELECT * FROM Musica WHERE Nombre LIKE ?";
+            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+                stmt.setString(1, "%" + searchTerm + "%");
+                ResultSet rs = stmt.executeQuery();
+                while (rs.next()) {
+                    Musicas musica = new Musicas(
+                            rs.getInt("id"),
+                            rs.getString("Nombre"),
+                            rs.getString("Duracion"),
+                            rs.getString("Fecha_publicacion"),
+                            rs.getString("Artista"),
+                            rs.getString("filename")
+                    );
+                    musicList.add(musica);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        updateListbox();
+    	
+    	
+    	
+    	
+    	
+    	
+    	
+    	
     	
     	if (flag==0) {
     		flag=1;
@@ -93,6 +131,37 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
         	
         }
         
+    }
+    private void updateListbox() {
+        for (Musicas itemNuevo : musicList) {
+            Listitem item = new Listitem();
+            item.setParent(musicListbox);
+            item.setValue(itemNuevo);
+
+            Listcell cell = new Listcell();
+            cell.setParent(item);
+            cell.setLabel(String.valueOf(itemNuevo.getId()));
+
+            cell = new Listcell();
+            cell.setParent(item);
+            cell.setLabel(itemNuevo.getNombre());
+
+            cell = new Listcell();
+            cell.setParent(item);
+            cell.setLabel(itemNuevo.getDuracion());
+
+            cell = new Listcell();
+            cell.setParent(item);
+            cell.setLabel(itemNuevo.getFecha());
+
+            cell = new Listcell();
+            cell.setParent(item);
+            cell.setLabel(itemNuevo.getArtista());
+
+            cell = new Listcell();
+            cell.setParent(item);
+            cell.setLabel(itemNuevo.getFilename());
+        }
     }
 
     
