@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ControllerMusica extends GenericForwardComposer<Component> {
-	int flag=0;
+	
     @Wire
     private Listbox musicListbox;
 
@@ -77,59 +77,9 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
     	
     	
     	
-    	if (flag==0) {
-    		flag=1;
-    	}else {
-    		
-    		musicList.clear();
-    		musicListbox.getItems().clear();
-    	}
     	
-    	 // Initialize data (simulated for demonstration)
-        
-        musicList.add(new Musicas(1, "Song A", "4:30", "2024-07-12", "Artist A", "songA.mp3"));
-        musicList.add(new Musicas(2, "Song B", "3:45", "2024-07-11", "Artist B", "songB.mp3"));
-
-        // Set model for listbox
-        
-        Listitem item;
-        Listcell cell;
-        
-        for(Musicas itemNuevo : musicList) {
-        	
-        	    item = new Listitem();
-        	    item.setParent(musicListbox);
-        	    item.setValue(itemNuevo);
-        	    
-        	    cell = new Listcell();
-        	    cell.setParent(item);
-        	    cell.setLabel(String.valueOf(itemNuevo.getId()));
-        	    
-        	    cell = new Listcell();
-        	    cell.setParent(item);
-        	    cell.setLabel(itemNuevo.getNombre());
-        	    
-        	    cell = new Listcell();
-        	    cell.setParent(item);
-        	    cell.setLabel(itemNuevo.getDuracion().toString());
-        	    
-        	    cell = new Listcell();
-        	    cell.setParent(item);
-        	    cell.setLabel(itemNuevo.getFecha());
-        	    
-        	    cell = new Listcell();
-        	    cell.setParent(item);
-        	    cell.setLabel(itemNuevo.getArtista());
-        	    
-        	  
-        	  
-        	    cell = new Listcell();
-        	    cell.setParent(item);
-        	    cell.setLabel(itemNuevo.getFilename());
-        	
-
-        	
-        }
+    	
+       
         
     }
     private void updateListbox() {
