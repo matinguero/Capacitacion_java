@@ -18,6 +18,7 @@ import org.zkoss.zul.Listitem;
 import models.Conexion;
 import models.Musicas;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -42,14 +43,26 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
     public void init() {
        
     }
+    
+    
     public void onClick$searchButton(ForwardEvent event) {
+    	
+    	
+    	
+    	BuscaryCargar();
+    
+    	
+       
+    }
+    
+    public void BuscaryCargar() {
     	
     	String searchTerm = searchTextbox.getValue();
         musicList.clear();
         musicListbox.getItems().clear();
         try (Connection conn = Conexion.getConnection()) {
-            String query = "SELECT * FROM Musica WHERE Nombre LIKE ?";
-            try (PreparedStatement stmt = conn.prepareStatement(query)) {
+            String query = "{CALL spBuscarMusica(?)}";
+            try (CallableStatement stmt = conn.prepareCall(query)) {
                 stmt.setString(1, "%" + searchTerm + "%");
                 ResultSet rs = stmt.executeQuery();
                 while (rs.next()) {
@@ -68,20 +81,11 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
             e.printStackTrace();
         }
         updateListbox();
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-    	
-       
         
     }
+    
+    
+    
     private void updateListbox() {
         for (Musicas itemNuevo : musicList) {
             Listitem item = new Listitem();
