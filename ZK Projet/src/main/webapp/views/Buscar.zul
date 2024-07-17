@@ -16,6 +16,7 @@
                     <listheader label="Filename" visible="false"/>
                 </listhead>
             </listbox>
+           
         </vbox>
     </window>
 </zk>

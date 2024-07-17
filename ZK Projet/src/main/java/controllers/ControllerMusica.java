@@ -9,6 +9,7 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.ForwardEvent;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
+import org.zkoss.zul.Label;
 import org.zkoss.zul.ListModelList;
 import org.zkoss.zul.Listbox;
 import org.zkoss.zul.Listcell;
@@ -30,6 +31,8 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
 	
     @Wire
     private Listbox musicListbox;
+    @Wire
+    private Label idLabel, nombreLabel, duracionLabel, fechaLabel, artistaLabel, filenameLabel;
 
     @Wire
     private Textbox searchTextbox;
@@ -117,6 +120,8 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
             cell.setLabel(itemNuevo.getFilename());
         }
     }
+    
+    
 
     
     // Getters and setters (if needed)
