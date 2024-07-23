@@ -13,10 +13,9 @@
                     <listheader label="Duración"/>
                     <listheader label="Fecha"/>
                     <listheader label="Artista"/>
-                    <listheader label="Filename" visible="false"/>
                 </listhead>
             </listbox>
-           
+            
         </vbox>
     </window>
 </zk>

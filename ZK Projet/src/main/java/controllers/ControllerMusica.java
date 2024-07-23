@@ -74,8 +74,7 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
                             rs.getString("Nombre"),
                             rs.getString("Duracion"),
                             rs.getString("Fecha_publicacion"),
-                            rs.getString("Artista"),
-                            rs.getString("filename")
+                            rs.getString("Artista")
                     );
                     musicList.add(musica);
                 }
@@ -115,9 +114,7 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
             cell.setParent(item);
             cell.setLabel(itemNuevo.getArtista());
 
-            cell = new Listcell();
-            cell.setParent(item);
-            cell.setLabel(itemNuevo.getFilename());
+            
         }
     }
     

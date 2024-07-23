@@ -9,22 +9,18 @@ public class Musicas {
 	private String Duracion;
 	private String Fecha;
 	private String Artista;
-	private String filename;
 	
 	
 	
-	public Musicas(int id, String nombre, String duracion, String fecha, String artista, String filename) {
+
+	public Musicas(int id, String nombre, String duracion, String fecha, String artista) {
 		super();
 		this.id = id;
 		Nombre = nombre;
 		Duracion = duracion;
 		Fecha = fecha;
 		Artista = artista;
-		this.filename = filename;
 	}
-	
-
-
 	//getters y setters
 	
 	
@@ -58,12 +54,7 @@ public class Musicas {
 	public void setArtista(String artista) {
 		Artista = artista;
 	}
-	public String getFilename() {
-		return filename;
-	}
-	public void setFilename(String filename) {
-		this.filename = filename;
-	}
+	
 	
 	//Procesos SQL
 	

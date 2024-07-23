@@ -34,8 +34,8 @@ public class controladormusicaalternativoNOUSE extends GenericForwardComposer<Co
     public void init() {
         // Initialize data (simulated for demonstration)
         List<Musicas> initialMusicList = new ArrayList<>();
-        initialMusicList.add(new Musicas(1, "Song A", "4:30", "2024-07-12", "Artist A", "songA.mp3"));
-        initialMusicList.add(new Musicas(2, "Song B", "3:45", "2024-07-11", "Artist B", "songB.mp3"));
+     //   initialMusicList.add(new Musicas(1, "Song A", "4:30", "2024-07-12", "Artist A", "songA.mp3"));
+      //  initialMusicList.add(new Musicas(2, "Song B", "3:45", "2024-07-11", "Artist B", "songB.mp3"));
 
         // Set model for listbox
         musicList = new ListModelList<>(initialMusicList);
