@@ -1,0 +1,40 @@
+En el proceso de cálculo y pago de sueldos, pueden intervenir varios sectores de la empresa. Aquí te indico algunos de los principales sectores involucrados:
+
+Recursos Humanos (RRHH):
+
+Recopilación de datos de asistencia: RRHH se encarga de registrar y mantener los datos de presencia, faltas y llegadas tarde de los empleados.
+Cálculo del sueldo: RRHH también puede participar en el cálculo del sueldo, considerando el salario base, deducciones y cualquier otro factor relevante.
+Contabilidad/Finanzas:
+
+Revisión del cálculo: El departamento de Contabilidad o Finanzas revisa los cálculos de sueldos para asegurarse de que sean correctos y se ajusten a las políticas y normas contables.
+Generación de la nómina: Contabilidad genera la nómina basándose en los datos proporcionados por RRHH y asegura que todos los registros sean precisos.
+Aprobación de la nómina: Finanzas aprueba la nómina antes de proceder al pago.
+Administración:
+
+Aprobación de la nómina: La administración final puede tener la autoridad para aprobar la nómina antes de la realización de los pagos.
+Realización del pago: La administración o el departamento de Tesorería se encarga de realizar el pago de los sueldos a través de transferencia bancaria y de entregar los recibos de sueldo a los empleados.
+Ejemplo del Flujo de Intervención por Sector
+Inicio del proceso
+Recopilación de datos de asistencia - RRHH
+Registro de presencia
+Registro de faltas
+Registro de llegadas tarde
+Cálculo del sueldo - RRHH y Contabilidad
+Salario base
+Deducción por faltas
+Deducción por llegadas tarde
+Cálculo de horas extras (si aplica)
+Revisión del cálculo - Contabilidad
+¿El cálculo es correcto?
+Sí: Continuar al siguiente paso
+No: Revisar y corregir los datos de asistencia
+Generación de la nómina - Contabilidad
+Aprobación de la nómina - Finanzas y Administración
+¿Está aprobada la nómina?
+Sí: Continuar al siguiente paso
+No: Revisar y ajustar los cálculos
+Realización del pago - Tesorería/Administración
+Transferencia bancaria
+Entrega de recibos de sueldo
+Fin del proceso
+Este desglose muestra cómo cada sector contribuye al proceso completo de cálculo y pago de sueldos, asegurando que todas las etapas se gestionen adecuadamente y que los empleados reciban sus pagos de manera oportuna y precisa.
