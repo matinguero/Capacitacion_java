@@ -14,27 +14,27 @@ Administración:
 Aprobación de la nómina: La administración final puede tener la autoridad para aprobar la nómina antes de la realización de los pagos.
 Realización del pago: La administración o el departamento de Tesorería se encarga de realizar el pago de los sueldos a través de transferencia bancaria y de entregar los recibos de sueldo a los empleados.
 Ejemplo del Flujo de Intervención por Sector
-Inicio del proceso
--Recopilación de datos de asistencia - RRHH
+1-Inicio del proceso
+2-Recopilación de datos de asistencia - RRHH
 Registro de presencia
 Registro de faltas
 Registro de llegadas tarde
--Cálculo del sueldo - RRHH y Contabilidad
+3-Cálculo del sueldo - RRHH y Contabilidad
 Salario base
 Deducción por faltas
 Deducción por llegadas tarde
 Cálculo de horas extras (si aplica)
--Revisión del cálculo - Contabilidad
+4-Revisión del cálculo - Contabilidad
 ¿El cálculo es correcto?
 Sí: Continuar al siguiente paso
 No: Revisar y corregir los datos de asistencia
--Generación de la nómina - Contabilidad
--Aprobación de la nómina - Finanzas y Administración
+5-Generación de la nómina - Contabilidad
+6-Aprobación de la nómina - Finanzas y Administración
 ¿Está aprobada la nómina?
 Sí: Continuar al siguiente paso
 No: Revisar y ajustar los cálculos
--Realización del pago - Tesorería/Administración
+7-Realización del pago - Tesorería/Administración
 Transferencia bancaria
 Entrega de recibos de sueldo
-Fin del proceso
+8Fin del proceso
 Este desglose muestra cómo cada sector contribuye al proceso completo de cálculo y pago de sueldos, asegurando que todas las etapas se gestionen adecuadamente y que los empleados reciban sus pagos de manera oportuna y precisa.
