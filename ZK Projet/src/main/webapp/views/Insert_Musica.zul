@@ -1,9 +1,25 @@
 <?page title="Insertar musica" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="Insertar musica" border="normal">
-<label value="" />
+<window title="Insert Music" border="normal" width="400px" apply="controllers.MusicInsertController">
+        <vlayout>
+            <grid>
+                <rows>
+                    <row>
+                        <label value="Nombre:"/>
+                        <textbox id="nombreBox" width="200px"/>
+                    </row>
+                    <row>
+                        <label value="Duracion:"/>
+                        <textbox id="duracionBox" width="200px"/>
+                    </row>
+                    <row>
+                        <label value="Artista:"/>
+                        <textbox id="artistaBox" width="200px"/>
+                    </row>
+                </rows>
+            </grid>
+            <button label="Submit"/>
+        </vlayout>
+    </window>
 
-
-
-</window>
 </zk>
