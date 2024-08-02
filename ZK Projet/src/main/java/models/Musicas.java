@@ -1,6 +1,12 @@
 package models;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.Date;
+import java.sql.SQLException;
+import java.sql.Time;
+
+import models.Conexion;
 
 public class Musicas {
 	
@@ -59,7 +65,23 @@ public class Musicas {
 	//Procesos SQL
 	
 
-	
+	 public void InsertarCancion(String name, Time Duracion, String Artista) {
+	        String sql = "CALL spInsertarMusica(?,?,?)";
+
+	        try (Connection conn = Conexion.getConnection();
+	        		CallableStatement sp = conn.prepareCall(sql)) {
+
+	        	sp.setString(1, name);
+	        	sp.setTime(2, Duracion);
+	        	sp.setString(3, Artista);
+	        	sp.executeUpdate();
+
+	            System.out.println("Musica insertada con exito!");
+
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
+	    }
 
 	
 	

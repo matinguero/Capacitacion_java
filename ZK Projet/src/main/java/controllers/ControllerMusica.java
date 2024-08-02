@@ -60,7 +60,7 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
     
     public void BuscaryCargar() {
     	
-    	String searchTerm = searchTextbox.getValue();
+    	  String searchTerm = searchTextbox.getValue();
         musicList.clear();
         musicListbox.getItems().clear();
         try (Connection conn = Conexion.getConnection()) {
