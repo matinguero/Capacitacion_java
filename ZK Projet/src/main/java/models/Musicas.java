@@ -3,6 +3,7 @@ package models;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
 
@@ -83,6 +84,4 @@ public class Musicas {
 	        }
 	    }
 
-	
-	
 }

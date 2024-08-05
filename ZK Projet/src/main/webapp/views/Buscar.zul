@@ -1,21 +1,30 @@
+
 <?page title="Busqueda Musica" contentType="text/html;charset=UTF-8"?>
 <zk xmlns="http://www.zkoss.org/2005/zul">
-    <window id="musicWindow" apply="controllers.ControllerMusica">
+    <window id="musicWindow" apply="controllers.ControllerMusica" title="Music Manager">
         <vbox>
             <hbox spacing="10px">
                 <textbox id="searchTextbox" placeholder="Enter search term"/>
                 <button id="searchButton" label="Search"/>
             </hbox>
-            <listbox id="musicListbox" model="@{ControllerMusica$composer.musicList}" width="800px">
+            <listbox id="musicListbox" width="800px">
                 <listhead>
                     <listheader label="ID"/>
                     <listheader label="Nombre"/>
                     <listheader label="Duración"/>
                     <listheader label="Fecha"/>
                     <listheader label="Artista"/>
+                    <listheader label="Actions"/>
                 </listhead>
+               
             </listbox>
-            
+            <separator/>
+            <hbox spacing="10px">
+                <textbox id="nombreBox" placeholder="Nombre"/>
+                <textbox id="duracionBox" placeholder="Duración (HH:mm:ss)"/>
+                <textbox id="artistaBox" placeholder="Artista"/>
+                <button id="btnInsert" label="Insert"/>
+            </hbox>
         </vbox>
     </window>
 </zk>

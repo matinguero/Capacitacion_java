@@ -48,7 +48,7 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
     }
     @Init
     public void init() {
-       
+    	canciones();
     }
     
     
@@ -62,66 +62,31 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
        
     }
     
-    public void BuscaryCargar() {
-    	
-    	  String searchTerm = searchTextbox.getValue();
-        musicList.clear();
-        musicListbox.getItems().clear();
-        try (Connection conn = Conexion.getConnection()) {
-            String query = "{CALL spBuscarMusica(?)}";
-            try (CallableStatement stmt = conn.prepareCall(query)) {
-                stmt.setString(1, "%" + searchTerm + "%");
-                ResultSet rs = stmt.executeQuery();
-                while (rs.next()) {
-                    Musicas musica = new Musicas(
-                            rs.getInt("id"),
-                            rs.getString("Nombre"),
-                            rs.getString("Duracion"),
-                            rs.getString("Fecha_publicacion"),
-                            rs.getString("Artista")
-                    );
-                    musicList.add(musica);
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        updateListbox();
-        
+   
+    
+    public void canciones() {
+    	  try (Connection conn = Conexion.getConnection()) {
+	            String query = "select * from Musica";
+	            try (CallableStatement stmt = conn.prepareCall(query)) {
+	                 ResultSet rs = stmt.executeQuery();
+	                while (rs.next()) {
+	                    Musicas musica = new Musicas(
+	                            rs.getInt("id"),
+	                            rs.getString("Nombre"),
+	                            rs.getString("Duracion"),
+	                            rs.getString("Fecha_publicacion"),
+	                            rs.getString("Artista")
+	                    );
+	                    musicList.add(musica);
+	                }
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+    	  
+	        updateListbox();
     }
-    
-    
-    
-    private void updateListbox() {
-        for (Musicas itemNuevo : musicList) {
-            Listitem item = new Listitem();
-            item.setParent(musicListbox);
-            item.setValue(itemNuevo);
-
-            Listcell cell = new Listcell();
-            cell.setParent(item);
-            cell.setLabel(String.valueOf(itemNuevo.getId()));
-
-            cell = new Listcell();
-            cell.setParent(item);
-            cell.setLabel(itemNuevo.getNombre());
-
-            cell = new Listcell();
-            cell.setParent(item);
-            cell.setLabel(itemNuevo.getDuracion());
-
-            cell = new Listcell();
-            cell.setParent(item);
-            cell.setLabel(itemNuevo.getFecha());
-
-            cell = new Listcell();
-            cell.setParent(item);
-            cell.setLabel(itemNuevo.getArtista());
-
-            
-        }
-    }
-    
+   
     
 
 	public void onClick$btnInsert (ForwardEvent event){
@@ -153,7 +118,63 @@ Time duracion = parseTime(duracionBox.getText());
 	            return null;
 	        } 
 	    }
+	  public void BuscaryCargar() {
+	    	
+    	  String searchTerm = searchTextbox.getValue();
+        musicList.clear();
+        musicListbox.getItems().clear();
+        try (Connection conn = Conexion.getConnection()) {
+            String query = "{CALL spBuscarMusica(?)}";
+            try (CallableStatement stmt = conn.prepareCall(query)) {
+                stmt.setString(1, "%" + searchTerm + "%");
+                ResultSet rs = stmt.executeQuery();
+                while (rs.next()) {
+                    Musicas musica = new Musicas(
+                            rs.getInt("id"),
+                            rs.getString("Nombre"),
+                            rs.getString("Duracion"),
+                            rs.getString("Fecha_publicacion"),
+                            rs.getString("Artista")
+                    );
+                    musicList.add(musica);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        updateListbox();
+        
+    }
+	  private void updateListbox() {
+	        for (Musicas itemNuevo : musicList) {
+	            Listitem item = new Listitem();
+	            item.setParent(musicListbox);
+	            item.setValue(itemNuevo);
 
+	            Listcell cell = new Listcell();
+	            cell.setParent(item);
+	            cell.setLabel(String.valueOf(itemNuevo.getId()));
+
+	            cell = new Listcell();
+	            cell.setParent(item);
+	            cell.setLabel(itemNuevo.getNombre());
+
+	            cell = new Listcell();
+	            cell.setParent(item);
+	            cell.setLabel(itemNuevo.getDuracion());
+
+	            cell = new Listcell();
+	            cell.setParent(item);
+	            cell.setLabel(itemNuevo.getFecha());
+
+	            cell = new Listcell();
+	            cell.setParent(item);
+	            cell.setLabel(itemNuevo.getArtista());
+
+	            
+	        }
+	    }
+	    
     
     // Getters and setters (if needed)
 }
