@@ -24,11 +24,15 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ControllerMusica extends GenericForwardComposer<Component> {
-	
+	@Wire
+	private Textbox nombreBox,duracionBox,artistaBox;
     @Wire
     private Listbox musicListbox;
     @Wire
@@ -119,6 +123,36 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
     }
     
     
+
+	public void onClick$btnInsert (ForwardEvent event){
+		Insertar();
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	public void Insertar() {
+		
+Time duracion = parseTime(duracionBox.getText());
+		
+		Musicas.InsertarCancion(nombreBox.getText(),duracion,artistaBox.getText() );
+		 
+	}
+	  private static Time parseTime(String duracionBox2) {
+	        try {
+	            SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+	            java.util.Date date = sdf.parse(duracionBox2);
+	            return new Time(date.getTime());
+	        } catch (ParseException e) {
+	            System.out.println("Invalid tilme format. Please enter time in HH:mm:ss format.");
+	            return null;
+	        } 
+	    }
 
     
     // Getters and setters (if needed)

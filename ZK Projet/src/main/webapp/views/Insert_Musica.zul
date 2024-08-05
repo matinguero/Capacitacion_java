@@ -1,6 +1,6 @@
 <?page title="Insertar musica" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window title="Insert Music" border="normal" width="400px" apply="controllers.MusicInsertController">
+<window title="Insert Music" border="normal" width="400px" apply="controllers.ControllerMusica">
         <vlayout>
             <grid>
                 <rows>

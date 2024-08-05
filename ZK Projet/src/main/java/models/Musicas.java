@@ -65,9 +65,9 @@ public class Musicas {
 	//Procesos SQL
 	
 
-	 public void InsertarCancion(String name, Time Duracion, String Artista) {
+	 public static void InsertarCancion(String name, Time Duracion, String Artista) {
 	        String sql = "CALL spInsertarMusica(?,?,?)";
-
+	       
 	        try (Connection conn = Conexion.getConnection();
 	        		CallableStatement sp = conn.prepareCall(sql)) {
 
