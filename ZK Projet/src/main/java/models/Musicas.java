@@ -3,6 +3,7 @@ package models;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Time;
@@ -65,7 +66,21 @@ public class Musicas {
 	
 	//Procesos SQL
 	
+	public static void BorrarCancion(int id) {
+        String sql = "call spBorrarMusica(?)";
 
+        try (Connection conn = Conexion.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+
+            System.out.println("Musica borrada con exito!");
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 	 public static void InsertarCancion(String name, Time Duracion, String Artista) {
 	        String sql = "CALL spInsertarMusica(?,?,?)";
 	       
@@ -83,5 +98,22 @@ public class Musicas {
 	            System.out.println(e.getMessage());
 	        }
 	    }
+	   public static void ActualizarCancion(int idIN, String nombre, Time duracion, String artista) {
+	        String sql = "CALL spUpdateMusica(?,?,?,?)";
 
+	        try (Connection conn = Conexion.getConnection();
+	             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+	            pstmt.setString(1, nombre);
+	            pstmt.setTime(2, duracion);
+	            pstmt.setString(3, artista);
+	            pstmt.setInt(4, idIN);
+	            pstmt.executeUpdate();
+
+	            System.out.println("Cancion updateada con exito!");
+
+	        } catch (SQLException e) {
+	            System.out.println(e.getMessage());
+	        }
+	    }
 }

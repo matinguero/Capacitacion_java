@@ -2,7 +2,7 @@ package controllers;
 
 
 
-
+import models.Musicas;
 import org.zkoss.bind.annotation.Command;
 import org.zkoss.bind.annotation.Init;
 import org.zkoss.zk.ui.Component;
@@ -62,30 +62,13 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
        
     }
     
-   
     
-    public void canciones() {
-    	  try (Connection conn = Conexion.getConnection()) {
-	            String query = "select * from Musica";
-	            try (CallableStatement stmt = conn.prepareCall(query)) {
-	                 ResultSet rs = stmt.executeQuery();
-	                while (rs.next()) {
-	                    Musicas musica = new Musicas(
-	                            rs.getInt("id"),
-	                            rs.getString("Nombre"),
-	                            rs.getString("Duracion"),
-	                            rs.getString("Fecha_publicacion"),
-	                            rs.getString("Artista")
-	                    );
-	                    musicList.add(musica);
-	                }
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-    	  
-	        updateListbox();
-    }
+    
+    public void onClick$btnInsertE (ForwardEvent event){
+		Update();
+		
+		
+	}
    
     
 
@@ -95,6 +78,28 @@ public class ControllerMusica extends GenericForwardComposer<Component> {
 		
 	}
 	
+	public void onClick$btneliminar (ForwardEvent event){
+		
+		Eliminar();
+	}
+	
+	
+	
+	
+	public void Update() {
+		Musicas musicas = parseListitemToMusicas(musicListbox.getSelectedIndex());
+		if (musicas != null) {
+			Musicas.ActualizarCancion(musicas.getId(), musicas.getNombre(), parseTime(musicas.getDuracion()), musicas.getArtista());
+		}
+	}
+	
+	public void Eliminar() {
+		Musicas musicas = parseListitemToMusicas(musicListbox.getSelectedIndex());
+
+		if (musicas != null) {
+			Musicas.BorrarCancion(musicas.getId());
+		}
+	}
 	
 	
 	
@@ -174,7 +179,50 @@ Time duracion = parseTime(duracionBox.getText());
 	            
 	        }
 	    }
-	    
+	  
+	  public void canciones() {
+    	  try (Connection conn = Conexion.getConnection()) {
+	            String query = "select * from Musica";
+	            try (CallableStatement stmt = conn.prepareCall(query)) {
+	                 ResultSet rs = stmt.executeQuery();
+	                while (rs.next()) {
+	                    Musicas musica = new Musicas(
+	                            rs.getInt("id"),
+	                            rs.getString("Nombre"),
+	                            rs.getString("Duracion"),
+	                            rs.getString("Fecha_publicacion"),
+	                            rs.getString("Artista")
+	                    );
+	                    musicList.add(musica);
+	                }
+	            }
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+    	  
+	        updateListbox();
+    }
+	  public Musicas parseListitemToMusicas(int index) {
+		    Listitem selectedItem = musicListbox.getItemAtIndex(index);
+
+		    if (selectedItem != null) {
+		        Listcell idCell = (Listcell) selectedItem.getChildren().get(0);
+		        Listcell nombreCell = (Listcell) selectedItem.getChildren().get(1);
+		        Listcell duracionCell = (Listcell) selectedItem.getChildren().get(2);
+		        Listcell fechaCell = (Listcell) selectedItem.getChildren().get(3);
+		        Listcell artistaCell = (Listcell) selectedItem.getChildren().get(4);
+
+		        int id = Integer.parseInt(idCell.getLabel());
+		        String nombre = nombreCell.getLabel();
+		        String duracion = duracionCell.getLabel();
+		        String fecha = fechaCell.getLabel();
+		        String artista = artistaCell.getLabel();
+
+		        return new Musicas(id, nombre, duracion, fecha, artista);
+		    }
+
+		    return null;
+		}
     
     // Getters and setters (if needed)
 }

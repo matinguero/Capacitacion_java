@@ -25,6 +25,14 @@
                 <textbox id="artistaBox" placeholder="Artista"/>
                 <button id="btnInsert" label="Insert"/>
             </hbox>
+             <separator/>
+            <hbox spacing="10px">
+                <textbox id="nombreBoxE" placeholder="Nombre editar"/>
+                <textbox id="duracionBoxE" placeholder="Duración (HH:mm:ss) editar"/>
+                <textbox id="artistaBoxE" placeholder="Artista editar"/>
+                <button id="btnInsertE" label="Update Seleccionado"/>
+            </hbox>
+              <button id="btneliminar" label="Eliminar Seleccionado"/>
         </vbox>
     </window>
 </zk>
